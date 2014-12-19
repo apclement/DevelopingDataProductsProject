@@ -52,7 +52,7 @@ totals <- train %>%
 totals <- totals[complete.cases(totals), ]    
     
 n1 <- nPlot(ratio ~ Sex, group = 'Pclass', data = totals, type = 'multiBarChart')
-n1$print('sample1', include_assets = TRUE)
+n1$print('sample1')
 ```
 
 --- .class #id 
