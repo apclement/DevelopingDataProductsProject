@@ -43,6 +43,18 @@ shinyUI(
         )
       )
     ), 
-    tabPanel("About")    
+    tabPanel("About",
+      h3('Titanic Survivor Explorer'),
+      h5('by A. Ph. Clement'),
+      p('This dynamic chart allows you to visualize the survival rate vs a set of biological and socio-economic groups.'),
+      p('The dataset is from the', 
+         tags$a(href = "https://www.kaggle.com/c/titanic-gettingStarted/data", target = '_blank', 'Titanic Kaggle competition')
+      ),          
+      p('This app is the final project for the Data Science specialization offered by Coursera and the \
+        Johns Hopkins Bloomberg School of Public Health.'),
+      p('Github repository: ', 
+        tags$a(href = "https://github.com/apclement/DevelopingDataProductsProject", target = '_blank', 'DevelopingDataProductsProject')
+      )      
+    )    
   )
 )
