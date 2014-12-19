@@ -6,25 +6,41 @@
 #
 
 library(shiny)
+require(rCharts)
 
-shinyUI(fluidPage(
+groups <- c('Sex' = "Sex", 'Passenger Class' = "Pclass", Age = "AgeSlice", "Number of Siblings/Spouses Aboard" = 'SibSp',
+            'Number of Parents/Children Aboard' = 'Parch', "Passenger Fare" = 'FareSlice')
 
-  # Application title
-  titlePanel("Old Faithful Geyser Data"),
-
-  # Sidebar with a slider input for number of bins
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
-    ),
-
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
-    )
+shinyUI(
+  navbarPage("Titanic Survivor Explorer",
+    tabPanel("Plot",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput(inputId = "g1",         
+                      label = "Group 1:", 
+                      choices = groups,
+                      selected = "Sex"),
+          selectInput(inputId = "g2",         
+                      label = "Group 2:",
+                      choices = groups,
+                      selected = "Pclass"),
+          hr(),
+          h3('Titanic Survivor Explorer'),
+          h5('by A. Ph. Clement'),
+          p('This dynamic chart allows you to visualize the survival rate vs a set of biological and socio-economic groups'),
+          p('The dataset is from the', 
+            tags$a(href = "https://www.kaggle.com/c/titanic-gettingStarted/data", target = '_blank', 'Titanic Kaggle competition')
+          ),          
+          p('This app is the final project for the Data Science specialization offered by Coursera and the \
+            Johns Hopkins Bloomberg School of Public Health.')
+         
+        ),                        
+        # Show a plot of the generated distribution
+        mainPanel(
+          showOutput("myChart", "nvd3")
+        )
+      )
+    ), 
+    tabPanel("About")    
   )
-))
+)
