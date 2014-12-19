@@ -1,0 +1,73 @@
+---
+title       : Titanic Survival Explorer
+subtitle    : Course Project 
+author      :  A. Ph. Clement
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+This application allows you to visualize the survival rate vs a set of biological and socio-economic categorical variables.
+
+The dataset is from the <a href="https://www.kaggle.com/c/titanic-gettingStarted/data" target='_blank'>Titanic Kaggle competition</a>
+
+--- .class #id 
+
+## Categorical variables
+
+You can select two different categorical variables among the following:
+
+- Sex
+- Passenger Class
+- Age
+- Number of Siblings/Spouses Aboard
+- Number of Parents/Children Aboard
+- Passenger Fare
+
+--- .class #id 
+
+## Example 1
+
+Survival rate vs Sex and Passenger Class variables. 
+
+```{r, echo = FALSE, message=F, results = 'asis', comment = NA, cache = F}
+library(dplyr)
+require(rCharts)
+
+source('model.R')
+
+options(RCHART_WIDTH = 600, RCHART_HEIGHT = 400)
+
+totals <- train %>%
+      group_by(Sex, Pclass) %>%
+      summarise(total = sum(Survived), len = length(Survived), ratio = total / len)
+    
+totals <- totals[complete.cases(totals), ]    
+    
+n1 <- nPlot(ratio ~ Sex, group = 'Pclass', data = totals, type = 'multiBarChart')
+n1$print('sample1', include_assets = TRUE, cdn = T)
+```
+
+--- .class #id 
+
+## Example 2
+
+Survival rate vs Sex and Passenger Fare variables. 
+
+```{r, echo = FALSE, message=F, results = 'asis', comment = NA, cache = F}
+
+totals <- train %>%
+      group_by(Sex, FareSlice) %>%
+      summarise(total = sum(Survived), len = length(Survived), ratio = total / len)
+    
+totals <- totals[complete.cases(totals), ]    
+    
+n2 <- nPlot(ratio ~ Sex, group = 'FareSlice', data = totals, type = 'multiBarChart')
+n2$print('sample2')
+```
