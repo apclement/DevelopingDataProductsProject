@@ -28,6 +28,7 @@ shinyUI(
           hr(),
           h3('Titanic Survivor Explorer'),
           h5('by A. Ph. Clement'),
+          p('The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.'),
           p('This dynamic chart allows you to visualize the survival rate vs a set of biological and socio-economic groups.'),
           p('The dataset is from the', 
             tags$a(href = "https://www.kaggle.com/c/titanic-gettingStarted/data", target = '_blank', 'Titanic Kaggle competition')
@@ -46,6 +47,7 @@ shinyUI(
     tabPanel("About",
       h3('Titanic Survivor Explorer'),
       h5('by A. Ph. Clement'),
+      p('The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.'),
       p('This dynamic chart allows you to visualize the survival rate vs a set of biological and socio-economic groups.'),
       p('The dataset is from the', 
          tags$a(href = "https://www.kaggle.com/c/titanic-gettingStarted/data", target = '_blank', 'Titanic Kaggle competition')

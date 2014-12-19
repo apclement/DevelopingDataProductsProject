@@ -14,6 +14,8 @@ knit        : slidify::knit2slides
 
 ## Introduction
 
+The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. 
+
 This application allows you to visualize the survival rate vs a set of biological and socio-economic categorical variables.
 
 The dataset is from the <a href="https://www.kaggle.com/c/titanic-gettingStarted/data" target='_blank'>Titanic Kaggle competition</a>
