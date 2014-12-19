@@ -7,6 +7,7 @@ framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
+ext_widgets : {rCharts: [libraries/nvd3]}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
@@ -36,11 +37,12 @@ You can select two different categorical variables among the following:
 
 Survival rate vs Sex and Passenger Class variables. 
 
-<link rel='stylesheet' href=//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.css>
-<script type='text/javascript' src=//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js></script>
-<script type='text/javascript' src=//d3js.org/d3.v3.min.js></script>
-<script type='text/javascript' src=//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.js></script>
-<script type='text/javascript' src=//nvd3.org/assets/lib/fisheye.js></script> 
+<link rel='stylesheet' href=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/css/nv.d3.css>
+<link rel='stylesheet' href=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/css/rNVD3.css>
+<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js></script>
+<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/d3.v3.min.js></script>
+<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/nv.d3.min-new.js></script>
+<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/fisheye.js></script> 
  <style>
   .rChart {
     display: block;

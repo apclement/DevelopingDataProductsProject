@@ -7,6 +7,7 @@ framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
+ext_widgets : {rCharts: [libraries/nvd3]}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
@@ -51,7 +52,7 @@ totals <- train %>%
 totals <- totals[complete.cases(totals), ]    
     
 n1 <- nPlot(ratio ~ Sex, group = 'Pclass', data = totals, type = 'multiBarChart')
-n1$print('sample1', include_assets = TRUE, cdn = T)
+n1$print('sample1', include_assets = TRUE)
 ```
 
 --- .class #id 
