@@ -37,21 +37,7 @@ You can select two different categorical variables among the following:
 
 Survival rate vs Sex and Passenger Class variables. 
 
-<link rel='stylesheet' href=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/css/nv.d3.css>
-<link rel='stylesheet' href=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/css/rNVD3.css>
-<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js></script>
-<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/d3.v3.min.js></script>
-<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/nv.d3.min-new.js></script>
-<script type='text/javascript' src=/home/alex/R/x86_64-pc-linux-gnu-library/3.1/rCharts/libraries/nvd3/js/fisheye.js></script> 
- <style>
-  .rChart {
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
-    width: 600px;
-    height: 400px;
-  }  
-  </style>
+
 <div id = 'sample1' class = 'rChart nvd3'></div>
 <script type='text/javascript'>
  $(document).ready(function(){
