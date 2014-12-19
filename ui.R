@@ -16,6 +16,7 @@ shinyUI(
     tabPanel("Plot",
       sidebarLayout(
         sidebarPanel(
+          h3('Group selection'),
           selectInput(inputId = "g1",         
                       label = "Group 1:", 
                       choices = groups,
@@ -27,7 +28,7 @@ shinyUI(
           hr(),
           h3('Titanic Survivor Explorer'),
           h5('by A. Ph. Clement'),
-          p('This dynamic chart allows you to visualize the survival rate vs a set of biological and socio-economic groups'),
+          p('This dynamic chart allows you to visualize the survival rate vs a set of biological and socio-economic groups.'),
           p('The dataset is from the', 
             tags$a(href = "https://www.kaggle.com/c/titanic-gettingStarted/data", target = '_blank', 'Titanic Kaggle competition')
           ),          
@@ -37,7 +38,8 @@ shinyUI(
         ),                        
         # Show a plot of the generated distribution
         mainPanel(
-          showOutput("myChart", "nvd3")
+          showOutput("myChart", "nvd3")         
+         
         )
       )
     ), 
